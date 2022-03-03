@@ -1,5 +1,344 @@
-h1 {
+:root {
+  --DH_height: 64px;
+  --color_black: black;
+  --color_white: white;
+  --color_BG: #E6F5FF;
+}
+
+/* -------------------- common -------------------- */
+
+h2 {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ol {
+  margin: 0;
+}
+
+.container section {
+  padding: 16px 16px 0;
+}
+
+.container section:nth-of-type(even) {
+  background: var(--color_BG);
+}
+
+.dummy_header {
+  height: var(--DH_height);
+}
+
+.dummy_header:nth-of-type(odd) {
+  background: var(--color_BG);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px;
+}
+
+#to_top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+#to_top.scrolled {
+  opacity: 1;
+}
+
+#to_top i {
+  font-size: 32px;
+  color: #A1ACB3;
+}
+
+/* -------------------- header -------------------- */
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  align-items: center;
+  transition: background-color .3s, box-shadow .3s;
+}
+
+header {
+  background: var(--color_black);
+  color: var(--color_white);
+  height: 64px;
+}
+
+header.scrolled {
+  background: rgba(250, 250, 250, .95);
+  color: var(--color_black);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+header h1{
+  margin: 0;
+  line-height: 64px;
+}
+
+header #open {
+  margin-left: auto;
+  margin-right: 16px;
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+header #open.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .95);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+  z-index: 20;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  margin: 0;
+}
+
+.overlay li {
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4) {
+  transition-delay: .4s;
+}
+
+/* -------------------- hero -------------------- */
+
+.hero {
+  height: calc(100vh - var(--DH_height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color_black);
+  color: var(--color_white);
+}
+
+.hero h1 {
+  text-align: center;
+}
+
+.hero h1>span {
+  font-size: 16px;
+}
+
+/* -------------------- about me -------------------- */
+
+#aboutme {
+  background: var(--color_black);
+}
+
+/* -------------------- works -------------------- */
+
+.works h3 {
+  padding-bottom: 8px;
+}
+.works .app_list {
+  margin-top: 16px;
+}
+
+.works table {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.works tr,
+.works td {
+  border: 1px solid var(--color_black);
+}
+
+.works th {
+  width: 100px;
+}
+
+.works .pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/* アプリーチ */
+
+.appreach {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #7C7C7C;
+  overflow: hidden;
+}
+.appreach:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.appreach p {
+  margin: 0;
+}
+.appreach a:after {
+  display: none;
+}
+.appreach__icon {
+  float: left;
+  border-radius: 10%;
+  overflow: hidden;
+  margin: 0 3% 0 0 !important;
+  width: 25% !important;
+  height: auto !important;
+  max-width: 120px !important;
+}
+.appreach__detail {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.5;
+  width: 72%;
+  max-width: 72%;
+}
+.appreach__detail:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.appreach__name {
+  font-size: 16px;
+  line-height: 1.5em !important;
+  max-height: 3em;
+  overflow: hidden;
+}
+.appreach__info {
+  font-size: 12px !important;
+}
+.appreach__developper, .appreach__price {
+  margin-right: 0.5em;
+}
+.appreach__posted a {
+  margin-left: 0.5em;
+}
+.appreach__links {
+  float: left;
+  height: 40px;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+.appreach__aslink img {
+  margin-right: 10px;
+  height: 40px;
+  width: 135px;
+}
+.appreach__gplink img {
+  height: 40px;
+  width: 134.5px;
+}
+.appreach__star {
+  position: relative;
+  font-size: 14px !important;
+  height: 1.5em;
+  width: 5em;
+}
+.appreach__star__base {
+  position: absolute;
+  color: #737373;
+}
+.appreach__star__evaluate {
+  position: absolute;
+  color: #ffc107;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* -------------------- skill -------------------- */
+
+/* -------------------- contact -------------------- */
+
+.contact ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 16px 0;
+}
+
+.contact li i {
   font-size: 24px;
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
+}
+
+/* -------------------- footer -------------------- */
+
+footer {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  background: var(--color_black);
+  color: var(--color_white);
+}
+
+footer small {
+  font-size: 16px;
 }

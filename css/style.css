@@ -89,7 +89,7 @@ header {
 header {
   background: var(--color_black);
   color: var(--color_white);
-  height: 64px;
+  height: var(--DH_height);
 }
 
 header.scrolled {
@@ -98,14 +98,21 @@ header.scrolled {
   box-shadow: 0 0 4px rgba(0, 0, 0, .3);
 }
 
-header h1{
-  margin: 0;
-  line-height: 64px;
+header.scrolled a {
+  color: var(--color_black);
+}
+
+header h3{
+  margin-left: 16px;
+  /* line-height: 64px; */
+}
+
+header .sp-menu {
+  margin-left: auto;
+  margin-right: 16px;
 }
 
 header #open {
-  margin-left: auto;
-  margin-right: 16px;
   font-size: 32px;
   line-height: 64px;
   cursor: pointer;
@@ -175,6 +182,10 @@ header #open.hide {
   transition-delay: .4s;
 }
 
+.pc-menu {
+  display: none;
+}
+
 /* -------------------- hero -------------------- */
 
 .hero {
@@ -226,6 +237,12 @@ header #open.hide {
 .works .pagination {
   display: flex;
   justify-content: center;
+}
+
+.works .pagination .page {
+  width: 24px;
+  height: 24px;
+  text-align: center;
 }
 
 /* アプリーチ */
@@ -341,4 +358,48 @@ footer {
 
 footer small {
   font-size: 16px;
+}
+
+/* -------------------- メディアクエリ -------------------- */
+
+@media (min-width: 768px) {
+  /* header */
+  header .pc-menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  header .pc-menu ul {
+    display: flex;
+  }
+
+  header .pc-menu a {
+    display: block;
+    width: 160px;
+    line-height: 64px;
+    text-align: center;
+  }
+
+  header .pc-menu a:hover {
+    background: var(--color_white);
+    color: var(--color_black);
+  }
+
+  header.scrolled .pc-menu a:hover {
+    background: var(--color_black);
+    color: var(--color_white);
+  }
+
+  header .sp-menu {
+    display: none;
+  }
+
+  .container section {
+    padding: 16px 64px 0;
+  }
+
+  /* hero */
+  .hero h1 {
+    font-size: 64px;
+  }
 }

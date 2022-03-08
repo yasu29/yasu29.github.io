@@ -3,6 +3,7 @@
   --color_black: black;
   --color_white: white;
   --color_BG: #E6F5FF;
+  --h1_delay: .06s;
 }
 
 /* -------------------- common -------------------- */
@@ -84,9 +85,6 @@ header {
   z-index: 10;
   align-items: center;
   transition: background-color .3s, box-shadow .3s;
-}
-
-header {
   background: var(--color_black);
   color: var(--color_white);
   height: var(--DH_height);
@@ -199,9 +197,89 @@ header #open.hide {
 
 .hero h1 {
   text-align: center;
+  display: flex;
+  overflow: hidden;
 }
 
-.hero h1>span {
+.hero h1 span {
+  /* font-size: 16px; */
+  display: block;
+  transform: translateY(105%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
+}
+
+.hero h1.show span {
+  transform: none;
+}
+
+.hero h1.show>span:nth-child(2) {
+  transition-delay: calc(var(--h1_delay) * 1);
+}
+
+.hero h1.show>span:nth-child(3) {
+  transition-delay: calc(var(--h1_delay) * 2);
+}
+
+.hero h1.show>span:nth-child(4) {
+  transition-delay: calc(var(--h1_delay) * 3);
+}
+
+.hero h1.show>span:nth-child(5) {
+  transition-delay: calc(var(--h1_delay) * 4);
+}
+
+.hero h1.show>span:nth-child(6) {
+  transition-delay: calc(var(--h1_delay) * 5);
+}
+
+.hero h1.show>span:nth-child(7) {
+  transition-delay: calc(var(--h1_delay) * 6);
+}
+
+.hero h1.show>span:nth-child(8) {
+  transition-delay: calc(var(--h1_delay) * 7);
+}
+
+.hero h1.show>span:nth-child(9) {
+  transition-delay: calc(var(--h1_delay) * 8);
+}
+
+.hero h1.show>span:nth-child(10) {
+  transition-delay: calc(var(--h1_delay) * 9);
+}
+
+.hero h1.show>span:nth-child(11) {
+  transition-delay: calc(var(--h1_delay) * 10);
+}
+
+.hero h1.show>span:nth-child(12) {
+  transition-delay: calc(var(--h1_delay) * 11);
+}
+
+.hero h1.show>span:nth-child(13) {
+  transition-delay: calc(var(--h1_delay) * 12);
+}
+
+.hero h1.show>span:nth-child(14) {
+  transition-delay: calc(var(--h1_delay) * 13);
+}
+
+.hero h1.show>span:nth-child(15) {
+  transition-delay: calc(var(--h1_delay) * 14);
+}
+
+.hero h1.show>span:nth-child(16) {
+  transition-delay: calc(var(--h1_delay) * 15);
+}
+
+.hero h1.show>span:nth-child(17) {
+  transition-delay: calc(var(--h1_delay) * 16);
+}
+
+.hero h1 p {
+  position: absolute;
+  top: 55%;
+  left: calc(50% - 24px);
   font-size: 16px;
 }
 
@@ -221,8 +299,9 @@ header #open.hide {
 }
 
 .works table {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   width: 100%;
+  border: 2px solid var(--color_black);
 }
 
 .works tr,

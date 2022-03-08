@@ -42,6 +42,17 @@
   });
 }
 
+// -------------------- hero --------------------
+{
+  // const myname = document.getElementById('myname');
+  const h1 = document.querySelector('h1');
+
+  window.onload = function() {
+    // myname.classList.add('show');
+    h1.classList.add('show');
+  }
+}
+
 // -------------------- Chart.js --------------------
 {
   var ctx = document.getElementById("myChart").getContext('2d');

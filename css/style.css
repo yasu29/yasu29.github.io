@@ -3,6 +3,7 @@
   --color_black: black;
   --color_white: white;
   --color_BG: #E6F5FF;
+  --color_pagination: #4D6B80;
   --h1_delay: .06s;
 }
 
@@ -315,13 +316,24 @@ header #open.hide {
 
 .works .pagination {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 25vw;
+  margin: 0 auto;
 }
 
-.works .pagination .page {
+.works .pagination .prev,
+.works .pagination .page,
+.works .pagination .next {
   width: 24px;
   height: 24px;
   text-align: center;
+  border-radius: 4px;
+  border: 1px solid var(--color_pagination);
+}
+
+.works .navi-active {
+  background: var(--color_pagination);
+  color: var(--color_white);
 }
 
 /* アプリーチ */

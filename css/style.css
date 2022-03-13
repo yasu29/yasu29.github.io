@@ -45,6 +45,10 @@ ol {
   background: var(--color_BG);
 }
 
+.container .desc {
+  margin: 0 32px;
+}
+
 .dummy_header {
   height: var(--DH_height);
 }
@@ -203,7 +207,6 @@ header #open.hide {
 }
 
 .hero h1 span {
-  /* font-size: 16px; */
   display: block;
   transform: translateY(105%);
   transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
@@ -271,10 +274,6 @@ header #open.hide {
 
 .hero h1.show>span:nth-child(16) {
   transition-delay: calc(var(--h1_delay) * 15);
-}
-
-.hero h1.show>span:nth-child(17) {
-  transition-delay: calc(var(--h1_delay) * 16);
 }
 
 .hero h1 p {
@@ -454,6 +453,11 @@ footer small {
 /* -------------------- メディアクエリ -------------------- */
 
 @media (min-width: 768px) {
+  /* common */
+  h2 {
+    padding: 32px 0 32px;
+  }
+
   /* header */
   header .pc-menu {
     display: block;
@@ -489,13 +493,36 @@ footer small {
     padding: 16px 64px 0;
   }
 
+  .container section:last-child {
+    padding-bottom: 64px;
+  }
+
   /* hero */
   .hero h1 {
     font-size: 64px;
   }
 
+  /* aboutme */
+    
   /* works */
-.works .pagination {
-  width: 25vw; 
+  .works .pagination {
+    width: 25vw; 
+  }
 }
+
+@media (min-width: 821px) {
+  /* common */
+  .container section {
+    padding: 16px 256px 0;
+  }
+
+  .container .desc {
+    width: 693px;
+    margin: 0 auto;
+  }  
+
+  /* works */
+  .works .pagination {
+    width: 15vw; 
+  }
 }

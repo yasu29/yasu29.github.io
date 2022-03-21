@@ -244,44 +244,12 @@ header #open.hide {
   transition-delay: calc(var(--h1_delay) * 7);
 }
 
-.hero h1.show>span:nth-child(9) {
-  transition-delay: calc(var(--h1_delay) * 8);
-}
-
-.hero h1.show>span:nth-child(10) {
-  transition-delay: calc(var(--h1_delay) * 9);
-}
-
-.hero h1.show>span:nth-child(11) {
-  transition-delay: calc(var(--h1_delay) * 10);
-}
-
-.hero h1.show>span:nth-child(12) {
-  transition-delay: calc(var(--h1_delay) * 11);
-}
-
-.hero h1.show>span:nth-child(13) {
-  transition-delay: calc(var(--h1_delay) * 12);
-}
-
-.hero h1.show>span:nth-child(14) {
-  transition-delay: calc(var(--h1_delay) * 13);
-}
-
-.hero h1.show>span:nth-child(15) {
-  transition-delay: calc(var(--h1_delay) * 14);
-}
-
-.hero h1.show>span:nth-child(16) {
-  transition-delay: calc(var(--h1_delay) * 15);
-}
-
-.hero h1 p {
+/* .hero h1 p {
   position: absolute;
   top: 55%;
   left: calc(50% - 24px);
   font-size: 16px;
-}
+} */
 
 /* -------------------- about me -------------------- */
 
@@ -298,6 +266,10 @@ header #open.hide {
   margin-top: 16px;
 }
 
+.works .desc > ul > li + li {
+  margin-top: 64px;
+}
+
 .works table {
   margin-bottom: 16px;
   width: 100%;
@@ -311,6 +283,12 @@ header #open.hide {
 
 .works th {
   width: 100px;
+  background: var(--color_pagination);
+  color: var(--color_white);
+}
+
+.works td {
+  background: var(--color_white);
 }
 
 .works .pagination {

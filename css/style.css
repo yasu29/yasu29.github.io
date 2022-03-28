@@ -1,8 +1,12 @@
 :root {
   --DH_height: 64px;
   --color_black: black;
+  --color_top: linear-gradient(90deg, #393d40, #414549, #494e51, #51565a, #595f64, #62686d, #6a7176, #737a80);
   --color_white: white;
-  --color_BG: #E6F5FF;
+  /* --color_BG: #E6F5FF; */
+  --color_BG: linear-gradient(90deg, #e6f5ff, #e3f6ff, #e1f8ff, #defaff, #dcfbff, #dafcfe, #d9fefd, #d9fffa);
+  /* --color_BG_odd: linear-gradient(90deg, #ffffff, #fffffb, #fffff8, #fffff4, #fffff1, #ffffed, #ffffea, #ffffe6); */
+  --color_BG_odd: white;
   --color_pagination: #4D6B80;
   --h1_delay: .06s;
 }
@@ -45,6 +49,10 @@ ol {
   background: var(--color_BG);
 }
 
+.container section:nth-of-type(odd) {
+  background: var(--color_BG_odd);
+}
+
 .container .desc {
   margin: 0 32px;
 }
@@ -55,6 +63,10 @@ ol {
 
 .dummy_header:nth-of-type(odd) {
   background: var(--color_BG);
+}
+
+.dummy_header:nth-of-type(even) {
+  background: var(--color_BG_odd);
 }
 
 .copyright {
@@ -90,7 +102,7 @@ header {
   z-index: 10;
   align-items: center;
   transition: background-color .3s, box-shadow .3s;
-  background: var(--color_black);
+  background: var(--color_top);
   color: var(--color_white);
   height: var(--DH_height);
 }
@@ -98,6 +110,7 @@ header {
 header.scrolled {
   background: rgba(250, 250, 250, .95);
   color: var(--color_black);
+  background: var(--color_BG_odd);
   box-shadow: 0 0 4px rgba(0, 0, 0, .3);
 }
 
@@ -196,7 +209,7 @@ header #open.hide {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--color_black);
+  background: var(--color_top);
   color: var(--color_white);
 }
 
@@ -244,17 +257,10 @@ header #open.hide {
   transition-delay: calc(var(--h1_delay) * 7);
 }
 
-/* .hero h1 p {
-  position: absolute;
-  top: 55%;
-  left: calc(50% - 24px);
-  font-size: 16px;
-} */
-
 /* -------------------- about me -------------------- */
 
 #aboutme {
-  background: var(--color_black);
+  background: var(--color_top);
 }
 
 /* -------------------- works -------------------- */
@@ -320,6 +326,7 @@ header #open.hide {
   padding: 10px;
   border: 1px solid #7C7C7C;
   overflow: hidden;
+  background: var(--color_white);
 }
 .appreach:after {
   content: "";
@@ -420,7 +427,7 @@ footer {
   padding: 16px 0;
   display: flex;
   justify-content: center;
-  background: var(--color_black);
+  background: var(--color_top);
   color: var(--color_white);
 }
 
